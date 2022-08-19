@@ -1,0 +1,23 @@
+<div class="home-random13-container">
+    <div>
+        <button (click)="dynamicComponentCreation = !dynamicComponentCreation"> dynamic comp creation</button>
+        <button (click)="showJoinArray = !showJoinArray">order of comp, classes creation </button>
+        <button (click)="showParent34 = !showParent34">showParent34</button>
+        <button (click)="googleSearch = !googleSearch">google Search</button>
+    </div>
+    <div *ngIf="dynamicComponentCreation">
+        <div class="parent-component">
+            <app69-parent-r13></app69-parent-r13>
+        </div>
+    </div>    
+    <div *ngIf="showJoinArray">
+        <app69-join-array [join23]="items2" [name23]="'chiranjeevi'"></app69-join-array>
+    </div>
+    <div *ngIf="showParent34">
+        <app69-parent34></app69-parent34>
+    </div>
+    <div *ngIf="googleSearch">
+        <app69-google-search13></app69-google-search13>
+    </div>
+
+</div>

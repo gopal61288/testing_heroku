@@ -1,0 +1,57 @@
+
+<div class="home-di-container" fxLayout="row" fxLayoutGap="10px">
+    <div class="links" fxLayout="column" fxLayoutGap="20px">
+        <a [routerLink]="['di']"> DI </a>
+        <a [routerLink]="['no-di']"> No DI </a>
+        <a [routerLink]="['di-inject']"> DI with @Inject, not @Injectable</a>
+        <a [routerLink]="['token-types']"> Token Types</a>
+    </div>
+    <div class="user-actions" fxLayout="column">
+        <button (click)="showForwardRef=!showForwardRef">forwardRef</button>
+        <button (click)="showServices11=!showServices11 && showServices12=!showServices12 ">services11</button>
+        <button (click)="showInject23=!showInject23">inject23</button>
+        <button (click)="showInject24=!showInject24">inject24</button>&nbsp;
+        <div style="color: brown; font-size: small; max-width: 100px;" *ngIf="showInject24">
+            <span>NOTICE: inject24 class/service has no @injectable decorator..</span>&nbsp;&nbsp;
+            <span>we manually injected this 'inject24 class/service' </span>
+        </div>
+        <button (click)="showInject25=!showInject25">inject25</button>
+        <button (click)="showInject26=!showInject26">inject26</button>
+    </div>
+    <div class="child-components" fxLayout="column">
+        <div *ngIf="showForwardRef" class="child-component">
+            <app69-forward-ref></app69-forward-ref>
+        </div>
+        <div class="child-component" *ngIf="showServices11 && showServices12" fxLayout="column">
+            <div>each component getting its own instance of serv121 service</div>
+            <div>all components getting their own instance of service</div>
+            <div fxLayout="row" fxLayoutGap="10px">
+                <app69-service11></app69-service11>
+                <app69-service12></app69-service12>
+            </div>
+        </div>
+        <div class="child-component" *ngIf="showInject23">
+            <app69-inject23></app69-inject23>
+        </div>
+        <div class="child-component" *ngIf="showInject24">
+            <app69-inject24></app69-inject24>
+        </div>
+        <div class="child-component" *ngIf="showInject25">
+            <app69-inject25></app69-inject25>
+        </div>
+        <div class="child-component" *ngIf="showInject26">
+            <app69-inject26></app69-inject26>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--
+
+<a [routerLink]="['material23']"> material Stuff </a>
+<a [routerLink]="['activate23']"> route guards </a>
+<a [routerLink]="['services-di']"> services-di </a>
+
+-->

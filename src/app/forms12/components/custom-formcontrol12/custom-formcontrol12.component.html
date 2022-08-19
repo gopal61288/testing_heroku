@@ -1,0 +1,13 @@
+<div class="custom-formcontrol12-container">
+    <div id="custom-form-control-rating" fxLayout>
+        <div *ngFor="let item of [1, 2, 3, 4, 5]; let j = index">
+            <mat-icon class="cursor-pointer"
+                [ngClass]="{'fill-star': rating?.value && (j + 1 <= rating?.value) }" (click)="addRating(j)">
+                star_border
+            </mat-icon>
+        </div>
+    </div>
+</div>
+
+
+
